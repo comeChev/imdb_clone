@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { CgSpinner } from "react-icons/cg";
 
 export default function Error({ error, reset }) {
   useEffect(() => {
