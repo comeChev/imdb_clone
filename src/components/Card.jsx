@@ -10,7 +10,7 @@ export default function Card({ result }) {
   };
   return (
     <div
-      className="group cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 ease-in-out"
+      className="group cursor-pointer m-2 p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg border border-slate-400  transition-shadow duration-200 ease-in-out"
       key={result.id}
     >
       <Link href={`/movie/${result.id}`}>
@@ -24,7 +24,7 @@ export default function Card({ result }) {
           placeholder="blur"
           blurDataURL={"/spinner.svg"}
           alt="Image is not available"
-          className="sm:rounded-t-lg group-hover:opacity-80 transition duration-200"
+          className="mx-auto rounded-t-lg group-hover:opacity-80 transition duration-200"
         />
         <div className="p-2">
           <p className="line-clamp-3 text-md">{result.overview}</p>
