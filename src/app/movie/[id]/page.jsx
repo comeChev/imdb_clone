@@ -1,22 +1,8 @@
 import { getMovie } from "@/api/tmdbApi";
+import { getColorVote, getDateFr } from "@/utilities";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-function getColorVote(vote) {
-  if (Number(vote) <= 3) return "bg-red-500";
-  if (Number(vote) <= 6.999) return "bg-amber-500";
-  if (Number(vote) <= 10) return "bg-green-500";
-}
-
-function getDateFr(date) {
-  return new Date(date).toLocaleString("fr-FR", {
-    weekday: "long",
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 export default async function movie({ params }) {
   const { id } = params;

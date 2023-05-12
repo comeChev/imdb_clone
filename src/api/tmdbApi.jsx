@@ -70,3 +70,17 @@ export async function getGenres() {
   });
   return genres;
 }
+
+export async function getResultsOnSearch(search) {
+  const results = await fetch(
+    `${process.env.API_URL}/search/movie?api_key=${process.env.API_KEY}&language=fr-FR&query=${search}&page=1&include_adult=false`
+  )
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Something went wrong");
+      }
+      return res.json();
+    })
+    .then((data) => data.results);
+  return results;
+}

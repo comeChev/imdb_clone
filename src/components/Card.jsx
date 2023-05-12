@@ -1,4 +1,5 @@
 "use client";
+import { getDateFr } from "@/utilities";
 import Image from "next/image";
 import Link from "next/link";
 import { CgSpinner } from "react-icons/cg";
@@ -32,7 +33,7 @@ export default function Card({ result }) {
             {result.title || result.name}
           </h2>
           <p className="flex items-center">
-            {result.release_date || result.first_air_date}
+            {getDateFr(result.release_date) || getDateFr(result.first_air_date)}
             <span className="mx-2">•</span>
             <FiThumbsUp className="mr-1 text-lg" />
             {result.vote_count}
